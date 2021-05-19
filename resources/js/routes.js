@@ -3,6 +3,8 @@ import AboutPage from './Pages/AboutPage';
 import notfound from './Pages/404'; 
 import login from './Auth/Login'; 
 import register from './Auth/Register'; 
+import Dashboard from './Pages/Dashboard';
+
 export default{
     mode: 'history',
     routes:[
@@ -10,6 +12,7 @@ export default{
         {
             path:'/',
             component:Home,
+            name:'home',
             
             children: [
                 {
@@ -20,6 +23,7 @@ export default{
                 {
                     path:'/Login',
                     component:login,
+                    name:'/login_'
                 },
 
                 {
@@ -28,9 +32,24 @@ export default{
                 },
 
                 {
+                    path:'/Dashboard',
+                    component:Dashboard,
+                    name:'Dashboard',
+                    beforeEnter:(to,from,next)=>{
+                        axios.get('api/Authenticated').then(()=>{
+                            next()
+                            
+                        }).catch(()=>{
+                            return next({name: '/login_'})
+                        })
+                    }
+                },
+
+                {
                     path:'*',
                     component:notfound,
                 },
+
             ]
         },
 

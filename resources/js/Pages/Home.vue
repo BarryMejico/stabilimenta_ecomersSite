@@ -17,6 +17,7 @@
                  <li class="nav-item">
                     <router-link to='/Register'>Register</router-link>
                 </li>
+                
 
             </ul>
         </nav>
