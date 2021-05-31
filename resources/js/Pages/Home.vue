@@ -17,6 +17,9 @@
                  <li class="nav-item">
                     <router-link to='/Register'>Register</router-link>
                 </li>
+                <li class="nav-item">
+                    Search: <input type="text">
+                </li>
                 
 
             </ul>
@@ -30,11 +33,11 @@
                 </li>
 
                 <li class="nav-item">
-                    <router-link to='/ProductDetails'>Crud Products</router-link>
+                    <router-link to='/DataProducts'>Crud Products</router-link>
                 </li>
 
                 <li class="nav-item">
-                    <router-link to='/Orders'>Orders Page</router-link>
+                    <router-link to='/OrderList'>Orders Page</router-link>
                 </li>
 
             </ul>
@@ -43,17 +46,19 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
            Customer Pages
              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <router-link to='/Products'>Products--</router-link>
+                </li>
+
                 <li class="nav-item">
                     <router-link to='/Cart'>Cart</router-link>
                 </li>
 
                 <li class="nav-item">
-                    <router-link to='/Payment Gateway'>Payment Gateway</router-link>
+                    <router-link to='/Payment'>Payment Gateway</router-link>
                 </li>
 
-                 <li class="nav-item">
-                    <router-link to='/Products'>Products</router-link>
-                </li>
+                
 
                  <li class="nav-item">
                     <router-link to='/Products'>Delivery Details</router-link>

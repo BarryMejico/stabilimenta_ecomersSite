@@ -1,0 +1,4 @@
+[2021-05-31 00:50:51] local.ERROR: Cannot declare class CreateFailedJobsTable, because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot declare class CreateFailedJobsTable, because the name is already in use at /var/www/html/database/migrations/2021_05_19_034006_create_failed_jobs_table.php:7)
+[stacktrace]
+#0 {main}
+"} 
