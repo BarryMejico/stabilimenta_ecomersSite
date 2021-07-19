@@ -4,16 +4,18 @@
         cards of products 
         <button> Addu to Cartu</button>
         <hr>
-        <h2>Cart</h2>
-        <Cart></Cart>
+        
+        <cart></cart>
         
     </div>
 </template> 
 <script>
-import Cart from './Cart'
+import Cart from '../cart/cart.vue'
+
 export default {
     components:{
-        Cart,
+        Cart
+       
        
     },
 }
