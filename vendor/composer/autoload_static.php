@@ -579,6 +579,7 @@ class ComposerStaticInit2bf5eac827973b3a732a570d1e13dcfa
         'App\\Http\\Controllers\\RegisterControl' => __DIR__ . '/../..' . '/app/Http/Controllers/RegisterControl.php',
         'App\\Http\\Controllers\\SalesController' => __DIR__ . '/../..' . '/app/Http/Controllers/SalesController.php',
         'App\\Http\\Controllers\\VendorController' => __DIR__ . '/../..' . '/app/Http/Controllers/VendorController.php',
+        'App\\Http\\Controllers\\cookiemanster' => __DIR__ . '/../..' . '/app/Http/Controllers/cookiemanster.php',
         'App\\Http\\Controllers\\itemController' => __DIR__ . '/../..' . '/app/Http/Controllers/itemController.php',
         'App\\Http\\Controllers\\po_lisController' => __DIR__ . '/../..' . '/app/Http/Controllers/po_lisController.php',
         'App\\Http\\Controllers\\receivingController' => __DIR__ . '/../..' . '/app/Http/Controllers/receivingController.php',

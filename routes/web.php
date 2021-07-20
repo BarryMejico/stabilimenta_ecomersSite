@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\cookiemanster;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,7 @@ Route::get('/', function () {
 Route::any('{any}', function () {
     return view('welcome');
 })->where('any', '.*');
+
+Route::get('/makeCookie', [cookiemanster::class, 'makeCookie']);
+
 

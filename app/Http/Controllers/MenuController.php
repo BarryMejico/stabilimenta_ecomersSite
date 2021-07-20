@@ -18,8 +18,18 @@ class MenuController extends Controller
 
     public function allmenu(){
         $Menu= DB::table('menus')
-        
         ->get();
         return $Menu;
 }
+
+public function bakeC(){
+       // $minutes="ss";
+       // return response('Hello World')->cookie(
+       //     'color', 'Red', $minutes
+       // );
+       $Menu= DB::table('menus')
+        ->get();
+        return $Menu;
+   }
+
 }

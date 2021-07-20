@@ -1,12 +1,24 @@
 <template>
     <div>
         <button @click="openNav()">Cart</button>
-    <div id="mySidenav" class="sidenav">
+  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" @click.prevent="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  
+  <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Product</div>
+
+                    <div class="card-body">
+                        <button @click="setcookie()">cookies</button>
+                        <button @click="getcookie()">get</button>
+                        {{cookie}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 </div>
 
         
@@ -14,7 +26,30 @@
 </template>
 <script>
 export default {
+  data(){
+    return{
+      cookie:'waiting',
+    }
+  },
     methods:{
+
+      setcookie(){
+        axios
+        .get('/makeCookie')
+        .then((res)=>{
+            this.cookie=res.data;
+        })
+      },
+
+      getcookie(){
+        axios
+        .get('/api/getCookies')
+        .then((res)=>{
+          this.cookie=res.data;
+        })
+      },
+
+
        /* Set the width of the side navigation to 250px */
 openNav() {
  var a= document.getElementById("mySidenav");

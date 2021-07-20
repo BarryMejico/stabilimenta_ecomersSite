@@ -29,6 +29,7 @@ return array(
     'App\\Http\\Controllers\\RegisterControl' => $baseDir . '/app/Http/Controllers/RegisterControl.php',
     'App\\Http\\Controllers\\SalesController' => $baseDir . '/app/Http/Controllers/SalesController.php',
     'App\\Http\\Controllers\\VendorController' => $baseDir . '/app/Http/Controllers/VendorController.php',
+    'App\\Http\\Controllers\\cookiemanster' => $baseDir . '/app/Http/Controllers/cookiemanster.php',
     'App\\Http\\Controllers\\itemController' => $baseDir . '/app/Http/Controllers/itemController.php',
     'App\\Http\\Controllers\\po_lisController' => $baseDir . '/app/Http/Controllers/po_lisController.php',
     'App\\Http\\Controllers\\receivingController' => $baseDir . '/app/Http/Controllers/receivingController.php',

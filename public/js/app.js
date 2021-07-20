@@ -2297,8 +2297,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      cookie: 'waiting'
+    };
+  },
   methods: {
+    setcookie: function setcookie() {
+      var _this = this;
+
+      axios.get('/makeCookie').then(function (res) {
+        _this.cookie = res.data;
+      });
+    },
+    getcookie: function getcookie() {
+      var _this2 = this;
+
+      axios.get('/api/getCookies').then(function (res) {
+        _this2.cookie = res.data;
+      });
+    },
+
     /* Set the width of the side navigation to 250px */
     openNav: function openNav() {
       var a = document.getElementById("mySidenav");
@@ -7032,7 +7064,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* The side navigation menu */\n.sidenav[data-v-629745f6] {\r\n  height: 100%; /* 100% Full-height */\r\n  width: 0; /* 0 width - change this with JavaScript */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 1; /* Stay on top */\r\n  top: 0; /* Stay at the top */\r\n  left: 0;\r\n  background-color: #111; /* Black*/\r\n  overflow-x: hidden; /* Disable horizontal scroll */\r\n  padding-top: 60px; /* Place content 60px from the top */\r\n  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */\r\n  float: right;\r\n  margin-left: 50%;\n}\r\n\r\n/* The navigation menu links */\n.sidenav a[data-v-629745f6] {\r\n  padding: 8px 8px 8px 32px;\r\n  text-decoration: none;\r\n  font-size: 25px;\r\n  color: #818181;\r\n  display: block;\r\n  transition: 0.3s;\n}\r\n\r\n/* When you mouse over the navigation links, change their color */\n.sidenav a[data-v-629745f6]:hover {\r\n  color: #f1f1f1;\n}\r\n\r\n/* Position and style the close button (top right corner) */\n.sidenav .closebtn[data-v-629745f6] {\r\n  position: absolute;\r\n  top: 0;\r\n  right: 25px;\r\n  font-size: 36px;\r\n  margin-left: 50px;\n}\r\n\r\n/* Style page content - use this if you want to push the page content to the right when you open the side navigation */\n#main[data-v-629745f6] {\r\n  transition: margin-left .5s;\r\n  padding: 20px;\n}\r\n\r\n/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */\n@media screen and (max-height: 450px) {\n.sidenav[data-v-629745f6] {padding-top: 15px;}\n.sidenav a[data-v-629745f6] {font-size: 18px;}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* The side navigation menu */\n.sidenav[data-v-629745f6] {\r\n  height: 100%; /* 100% Full-height */\r\n  width: 0; /* 0 width - change this with JavaScript */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 1; /* Stay on top */\r\n  top: 0; /* Stay at the top */\r\n  left: 0;\r\n  background-color: #111; /* Black*/\r\n  overflow-x: hidden; /* Disable horizontal scroll */\r\n  padding-top: 60px; /* Place content 60px from the top */\r\n  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */\r\n  float: right;\r\n  margin-left: 50%;\n}\r\n\r\n/* The navigation menu links */\n.sidenav a[data-v-629745f6] {\r\n  padding: 8px 8px 8px 32px;\r\n  text-decoration: none;\r\n  font-size: 25px;\r\n  color: #818181;\r\n  display: block;\r\n  transition: 0.3s;\n}\r\n\r\n/* When you mouse over the navigation links, change their color */\n.sidenav a[data-v-629745f6]:hover {\r\n  color: #f1f1f1;\n}\r\n\r\n/* Position and style the close button (top right corner) */\n.sidenav .closebtn[data-v-629745f6] {\r\n  position: absolute;\r\n  top: 0;\r\n  right: 25px;\r\n  font-size: 36px;\r\n  margin-left: 50px;\n}\r\n\r\n/* Style page content - use this if you want to push the page content to the right when you open the side navigation */\n#main[data-v-629745f6] {\r\n  transition: margin-left .5s;\r\n  padding: 20px;\n}\r\n\r\n/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */\n@media screen and (max-height: 450px) {\n.sidenav[data-v-629745f6] {padding-top: 15px;}\n.sidenav a[data-v-629745f6] {font-size: 18px;}\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -43639,13 +43671,44 @@ var render = function() {
         [_vm._v("×")]
       ),
       _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("About")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Services")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Clients")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Contact")])
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-header" }, [_vm._v("Product")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c(
+                "button",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.setcookie()
+                    }
+                  }
+                },
+                [_vm._v("cookies")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.getcookie()
+                    }
+                  }
+                },
+                [_vm._v("get")]
+              ),
+              _vm._v(
+                "\n                        " +
+                  _vm._s(_vm.cookie) +
+                  "\n                    "
+              )
+            ])
+          ])
+        ])
+      ])
     ])
   ])
 }

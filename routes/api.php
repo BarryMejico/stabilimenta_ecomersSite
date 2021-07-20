@@ -105,4 +105,6 @@ Route::post('accepted','InviteController@accepted');
 
 Route::get('menu','MenuController@menu'); 
 Route::get('allmenu','MenuController@allmenu'); 
- 
+
+Route::get('makeCookie','VendorController@makeCookie');
+Route::get('getCookies','cookiemanster@getCookie'); 
