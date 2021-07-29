@@ -57,7 +57,7 @@
 
 
         </div>
-        <message-box :message="message"></message-box>
+        <!-- <message-box :message="message"></message-box> -->
     </div>
 </div>
 </template>

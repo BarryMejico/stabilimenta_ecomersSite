@@ -35,7 +35,14 @@ class CustommerController extends Controller
         ]);
         $Vendor->save();
 
-        $customer = Customer::where('Ccode',$Code)->get();
+        // $customer = Customer::where('Ccode',$Code)->get();
+        $customer=array(
+            "Address"=>$input['Address'],
+            "Ccode"=>$Code,
+            "Customer"=>$input['Name'],
+            "Number"=>$input['Number'],
+        );
+
         return $customer;
     }
 

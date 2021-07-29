@@ -12,5 +12,6 @@ class Employee extends Model
         'CoCode',
         'id',
         'Position',
+        'permCode'
     ];
 }

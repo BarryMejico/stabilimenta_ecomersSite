@@ -23,14 +23,33 @@ class EmployeesController extends Controller
             'Ecode'=>$Code,
             'CoCode'=>$CoCode,
             'Position'=>"Input position",
+            'permCode'=>null,
         ]);
         $Vendor->save();
     }
 
     public function LoadEmp(){
-        $Vendors=Employee::paginate(5);
-        //$Vendors=Customer::paginate(5);
-        return $Vendors;
+        $Employee=Employee::paginate(5);
+        return $Employee;
+}
+
+public function all_LoadEmp(){
+   //----for taging to specific user/s
+   $UserIn=getUser()->id;
+   $UserCoCode=getUser()->CoCode;
+   //---------------
+    $Employee=DB::table('employees')
+                ->leftJoin('users','users.id','=','employees.id')
+                ->select('users.id',
+                         'employees.Employee',
+                         'employees.CoCode',
+                         'users.permCode',
+                         'employees.Position',
+                )
+                ->where('employees.CoCode', $UserCoCode)
+                ->get();
+    
+    return $Employee;
 }
 
 public function Search(Request $request){
@@ -44,4 +63,20 @@ public function Search(Request $request){
     return $search;
 }
 
+public function storeinvited(){  
+    $Code=Ucode();
+    $CoCode=getUser()->CoCode;
+    $Name_=getUser()->name;
+    $id_=getUser()->id;
+   
+    $Vendor = Employee::Create([
+        'Employee'=> $Name_, 
+        'Ecode'=>$Code,
+        'CoCode'=>$CoCode,
+        'id'=>$id_,
+        'Position'=>"Input position",
+        'permCode'=>null,
+    ]);
+    $Vendor->save();
+}
 }

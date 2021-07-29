@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
@@ -39,8 +39,4 @@ class RegisterControl extends Controller
                 'email'=>['Incorrecr Credentials!']
         ]);
     } 
-
-    public function logout(){
-        Auth::logout();
-    }
 }

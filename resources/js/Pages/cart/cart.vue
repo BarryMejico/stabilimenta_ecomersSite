@@ -6,13 +6,12 @@
   
   <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Product</div>
 
+                <div v-for="(Product,k) in cookie" :key='k'  class="card">
+                    <div class="card-header">{{Product.name}}</div>
                     <div class="card-body">
-                        <button @click="setcookie()">cookies</button>
-                        <button @click="getcookie()">get</button>
-                        {{cookie}}
+                        {{Product.id}}<br>
+                        {{Product.qty}}
                     </div>
                 </div>
             </div>
@@ -25,33 +24,53 @@
     </div>  
 </template>
 <script>
+
 export default {
+   props:['item'],
+    
   data(){
     return{
-      cookie:'waiting',
+      cookie:[],
+      items2:[
+        {id:'1',name:"kame",qty:'500'},
+        {id:'2',name:"Sila",qty:'300'},
+        ],
     }
   },
     methods:{
 
       setcookie(){
-        axios
-        .get('/makeCookie')
+        console.log(this.item)
+        axios.get('api/makeCookie',{params:{laman:this.item}})
         .then((res)=>{
             this.cookie=res.data;
         })
       },
 
       getcookie(){
+        this.cookie=[];
         axios
-        .get('/api/getCookies')
+        .get('api/getCookie')
         .then((res)=>{
-          this.cookie=res.data;
+          var cookie=res.data.laman;
+          for(var i in cookie)
+           this.cookie.push(JSON.parse(cookie[i]));
         })
       },
+
+      test(){
+        axios.get('api/testapi')
+        .then((res)=>{
+          alert(res.data)
+        })
+      },
+
+    
 
 
        /* Set the width of the side navigation to 250px */
 openNav() {
+this.getcookie();
  var a= document.getElementById("mySidenav");
   a.style.width = "25%";
   a.style.left="25%"; 

@@ -1,22 +1,35 @@
 <template>
     <div>
         <h2>Products</h2>
-        cards of products 
-        <button> Addu to Cartu</button>
+        <product-card @addtocart="passtocart"></product-card>
         <hr>
-        
-        <cart></cart>
+        <cart v-bind:item="datatopass"></cart>
         
     </div>
 </template> 
 <script>
 import Cart from '../cart/cart.vue'
+import ProductCard from './ProductCard.vue'
 
 export default {
     components:{
-        Cart
-       
-       
+        Cart,
+        ProductCard
+    },
+
+    data(){
+        return{
+            datatopass:[],
+        }
+    },
+
+    methods:{
+    passtocart(event){
+        
+        this.datatopass=event;
+        console.log(this.datatopass);
+
+    },
     },
 }
 </script>

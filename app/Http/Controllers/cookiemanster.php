@@ -1,21 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 
 class cookiemanster extends Controller
 {
     public function makeCookie(Request $request){
-        $minutes=1;
-       return response('Hello World')->cookie(
-           'color', 'Red', $minutes
-       );
+    $minutes=60 * 24 * 365 * 10;
+    //dd($request->all());
+    $data=$request->all();
+    $cookies=json_encode($data);
+
+       return response('x')->withCookie(cookie()->forever( 'data',$cookies, $minutes));
+
    }
 
     public function getCookie(Request $request){
-        $value = $request->cookie('color');
-        return $value;    
+        $value = $request->cookie('data');
+        $convertTojson=json_decode($value);
+        return $convertTojson;    
     }
 }

@@ -9,10 +9,25 @@ use Illuminate\Support\Facades\DB;
 class MenuController extends Controller
 {
     public function menu(){
+        // $permCode=getUser()->permCode;
+        //     $Menu= DB::table('permission_details')
+        //     ->join('menus', 'menus.id', '=', 'permission_details.id')
+        //     ->where('permission_details.permCode',$permCode)
+        //     ->select('menus.*')
+        //     ->get();
+        $menus=listofmenu();
+            return $menus;
+    }
+
+    public function menufor(Request $request){
+        $permCode=$request->selected;
             $Menu= DB::table('permission_details')
             ->join('menus', 'menus.id', '=', 'permission_details.id')
+            ->where('permission_details.permCode',$permCode)
             ->select('menus.*')
             ->get();
+            //listofmenu().$menus=$Menu;
+            //dd(listofmenu());
             return $Menu;
     }
 
@@ -21,15 +36,4 @@ class MenuController extends Controller
         ->get();
         return $Menu;
 }
-
-public function bakeC(){
-       // $minutes="ss";
-       // return response('Hello World')->cookie(
-       //     'color', 'Red', $minutes
-       // );
-       $Menu= DB::table('menus')
-        ->get();
-        return $Menu;
-   }
-
 }

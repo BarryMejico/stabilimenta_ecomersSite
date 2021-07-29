@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\VendorModel;
+use Illuminate\Support\Facades\App;
+use App\Helper\Ucode;
+use App\Ucode\Ucode as UcodeUcode;
 use Illuminate\Support\Facades\DB;
 use App\Rules\inUseData;
 

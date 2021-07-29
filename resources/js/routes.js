@@ -1,14 +1,14 @@
-import Home from './Pages/Home';
-import AboutPage from './Pages/AboutPage';
-import notfound from './Pages/404'; 
-import login from './Auth/Login'; 
-import register from './Auth/Register'; 
-import Dashboard from './Pages/Dashboard';
-import DataProducts from './Pages/Admin/DataProducts';
-import OrderList from './Pages/Admin/OrderList';
-import Products from './Pages/Products/Products';
-import Delivery from './Pages/Products/DeliveryDetails';
-import Payment from './Pages/Payment/PaymentGateway';
+import Home from './Pages/Home.vue';
+import AboutPage from './Pages/AboutPage.vue';
+import notfound from './Pages/404.vue'; 
+import login from './Auth/Login.vue'; 
+import register from './Auth/Register.vue'; 
+import Dashboard from './Pages/Dashboard.vue';
+import DataProducts from './Pages/Admin/DataProducts.vue';
+import OrderList from './Pages/Admin/OrderList.vue';
+import Products from './Pages/Products/Products.vue';
+import Delivery from './Pages/Products/DeliveryDetails.vue';
+import Payment from './Pages/Payment/PaymentGateway.vue';
 
 export default{
     mode: 'history',

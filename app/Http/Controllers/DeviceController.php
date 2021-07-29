@@ -15,7 +15,7 @@ class DeviceController extends Controller
             'Code' => ['required', 'string','unique:cusstomer__devices'],
             'DeciveName' => ['required', 'string'],
             'Model' => ['required', 'string'],
-            'Ccode' => ['required', 'string'],
+            'Ccode' => ['required'],
         ]);
 
         $Device = Cusstomer_Device::create([
